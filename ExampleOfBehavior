@@ -1,0 +1,16 @@
+a=1,b=2;
+c=a+b;
+now=0;
+future=100000;
+care:
+   now = now + 1;
+   if (now < future){ goto care; }
+
+---
+revised from the label care:
+care:
+   now = now + 1;
+   System.out.println("You want to go faster and faster.");
+   Thread.sleep(100000); // Not for you but the cpu.
+   if (now < future){ goto care;}
+   
